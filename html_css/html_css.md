@@ -19,15 +19,40 @@
   - 구성 : 시작태그 ~ 종료태그
   - 종료태그가 없는 태그 : 빈태그 (Empty Element)
 ```
-  <tag> contents </tag> : Element
+<tag> contents </tag> : Element
 
-  <tag ...> : Empty Element
+ <tag ...> : Empty Element
 ```
+
+## HTML Basic Structure
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body></body>
+</html>
+```
+### DOCTYPE
+- HTML 문서타입
+  - HTML 버젼
+  - HTML5 표준
+
+### Head - 웹사이트 기본 정보
+- meta : 웹사이트 관련 정보 (검색엔진 노출관련)
+- title : 웹사이트 제목 (웹 페이지 전체 제목 - 탭에 보이는 내용)
+
+### Body - 웹사이트 콘텐츠 (실제 화면에 보이는 내용)
+- 웹사이트에 Contents, Structure... 표시하는 모든 태그
+
+
+
 
 ## HTML Contents
 
 ### Text
-#### heading (제목)
+#### heading (제목 - 콘테츠의 제목)
 #### paragraph (단락)
 #### list (목록)
 #### table (표)
