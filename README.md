@@ -44,7 +44,7 @@
 
 - 표기법의 종류 (- 사용 용도는 선생님의 실무노하우 / 네이밍으로 파일을 구분하기위해)
    - section_content : snake case - 파일, 폴더
-   - section-content : kebab case - id, class
+   - section-content : kebab case - id, class / 외국업체들 , css에서 Sass에서 사용하기때문에 맞추는 것이 좋음
    - sectionContent : camel case - js
    - SectionContent : pascal case - js의 class
 
