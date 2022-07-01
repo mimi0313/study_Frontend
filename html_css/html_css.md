@@ -109,16 +109,58 @@
 (4) 부모 요소 | 자손 요소
 (5) 기준 요소 | 자손 요소
 
+- Description list (설명 목록)
+  - dl(description list)
+  - dt()
+  - dd
+
 
 #### table (표)
+- table
+- thead : 표상단, 헤드 그룹 
+- tbody : 컨텐츠, 데이터 그룹
+- tr(table row) : 행
+- th(table header) : 제목 (각 항목의 타이틀)
+- td(table data) : 칸(열)
 
 #### hyper link (하이퍼 링크)
+- a(anchor)
+- 기본 속성 : href(hypertext reference) : 연결한 웹 페이지 주소
+
+- 링크 이동 위치
+  - 외부 링크 : href="이동할 주소"
+               href="" target="_blank" 새탭으로 열어준다
+  - 내부 링크 : 북마크 (동일한 페이지 내에서 이동)
+              id="name" 으로 위치를 id값으로 지정해주고
+              href="#name" #을 사용해서 내부 링크 위치 지정
+              href="#" #만 입력하면 페이지에서 가장 상단으로 이동
+
 
 ### Media
 
 #### image (이미지)
+- img(image) : 태그 사용
+  - 빈 요소 : 시작태그만 있는 태그
+- src(source) : 이미지 정보(이미지의 위치주소)
+- alt(alternate text) : 이미지 내용(이미지가 화면에 표시되지 않을때, 
+                스크린 리더리가 이미지를 전달할때 읽어주는 내용
+```
+  <img src="이미지 정보(이미지의 위치주소).jpt" alt="22년 여름 설악산 사진" />
+```
 
 #### video (영상)
+- video, source
+- 속성
+  - video 태그 (속서 on/off 형태. ="" 사용하지 않고 이름만 작성하면 작동) 
+    - controls : 동영상 제어 버튼  
+    - autoplay : 자동 재생
+    - muted : 브라우저에따라 소리때문에 자동 재생을 제어하기도 함.  
+              그래서 음속어를 같이 해주면 자동 재생 기능 활성화됨. 
+    - loop : 반복 재생
+  - source 태그  
+    - src : 파일 위치의 경로와 이름.
+    - type : 미디어 형식
+  
 
 ## HTML Structure
 
