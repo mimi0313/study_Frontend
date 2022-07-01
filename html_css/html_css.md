@@ -161,6 +161,10 @@
     - src : 파일 위치의 경로와 이름.
     - type : 미디어 형식
   
+- youtube 영상불러오기
+  - youtube에서 제공하는 소스 사용
+    - url 뒤에 자동재생=1&반복=1&플레이할영상코드를 입력해준다.
+    - https://www.youtube.com/embed/EFavUiSnABg?autoplay=1&mute=1&loop=1&playlist=해당영상고유코드
 
 ## HTML Structure
 
