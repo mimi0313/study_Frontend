@@ -169,7 +169,59 @@
 ## HTML Structure
 
 ### Semantic
+- 화면의 구조(뼈대)를 나타내고 컨텐츠의 내용 구분을 위해 사용하는 태그
+- 시맨틱한 태그를 사용하여야 검색엔진에서 검색이 가능함.
+
+- header
+  - logo, login ...
+- nav(igation)
+  - menu
+- section
+  - 본문영역
+- article
+  - 본문영역
+- aside
+  - 본문영역 (사이트 영역으로 광고 등 부수적인 컨텐츠에 활용되는 영역)
+- footer
+  - 연락처, 주소, 회사이름 ...
 
 ### Layout
+
+- Block & Inline
+  - Block 요소
+    -
+  - Inline 요소
+
+## 경로지정
+- 파일의 위치, 인터넷 주소(url)
+- 상대 경로
+  - 리소스 파일을 사용하는 HTML 파일 기준
+  - html파일 위치에 따라 주소(url) 변경됨
+  - root(/)폴더를 기준으로 주소 적용
+```
+폴더 뎁스에 따라 경로가 찾아가 파일을 찾음
+
+- 보여줄 페이지'기준' 동일한 폴더가 아니면 빠져나가 ../ 해당 파일 지정 
+  ../../images/logo.png
+
+- /projet/images/logo.png
+
+```
+- 절대 경로
+  - 이미지를 표시하는 html 페이지가 기준이 아니고, 해당 서비가 기준
+  - 서버부터 주소(url)를 사용하기때문에 변동이 없음.
+```
+- www.image.com/projet/images/logo.png
+```
+
+## 강조태그, 기타태그
+- 텍스트 특정 부분 강조
+  - strong : 강한 강조
+  - em(phasize) : 일반 강조
+  - mark : html5버젼, block 강조
+
+- 텍스트를 표시할 떄 부족한 태기를 보완하는 태그
+  - i(talic)
+  - b(old)
 
 # CSS
