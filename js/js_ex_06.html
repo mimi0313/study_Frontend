@@ -34,37 +34,52 @@
     price.pop();
     console.log(price);
 
-    //  객체 데이터 선언
+    // 객체 데이터 선언
     const obj = {
-      tyle:'fiat',
+      type:'Fiat',
       model:'500',
       color:'white'
     }
 
-    //  객체 데이터 접근방식
-    //  객체 데이터 프로퍼티(메소드)
-
+    // 객체 데이터 접근 방식
+    // 객체이름.프로퍼티(메소드)
     console.log(obj);
     console.log(obj.type);
-    obj.type='bmw';
+    obj.type = 'BMW';
     console.log(obj);
 
+    // obj = {
+    //   weight:850
+    // }
 
+    console.log(obj['type']);
 
+    /*
+      0 : 'type'
+      
+      obj.0 (X)
+      obj[0] (O)
+    */
 
-    // 클래스 변경
-    // Propertu
-    class myClass{
-      constructor(type, model, color){
-        this.type = type;
-        this.model = model;
-        this.color= color;
+      // 클래스 선언
+      // Property
+      class myClass{
+        constructor(type, model, color){
+          this.type = type;
+          this.model = model;
+          this.color = color;
+        }
+
+        print(){
+          console.log(this.type, this.model, this.color);
+        }
       }
 
-      print(){
-        console.log(this.type, this.model, this.color);
-      }
-    }
+      // 객체 데이터 생성
+      let carObj = new myClass('Benz', 'E-class', 'red');
+      console.log(carObj);
+
+      carObj.print();
 
 
   </script>
