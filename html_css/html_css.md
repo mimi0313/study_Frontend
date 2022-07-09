@@ -226,3 +226,86 @@
 
 
 # CSS
+
+- content styling
+  - text styling
+  - media styling
+
+
+- layout(structure styling)
+  - 가로배치 (flexbox)
+
+## CSS Basic
+- css : cascading style sheet
+
+```
+h1{color:blue;font-size:20px;}
+
+h1{
+    color:blue;
+    font-size:20px;
+}
+
+```
+
+## Selecrot(선택자)
+- 선택자로 THML 요소를 선택
+- HTML 요소 선택 방법
+  - Simple Selection(요소 선택자)
+    - Tag/Element 이름 사용
+    - class 이름 사용
+    - id 이름 사용
+
+```
+<a class="naver" href="http://naver.com">네이버</a>
+<a id="daum" href="http://daum.net">다음</a>
+
+/* a태그는 모두 빨간색 적용 */
+a{
+  color:red;
+}
+
+/* 네이버는 녹색 , 다음은 빨간색 적용 */
+.naver{
+  color:green;
+}
+
+#daum{
+  color:red;
+}
+
+```
+
+### id, class 이용의 특성
+- id 
+  - 같은(한) html페이지에서 고유(유일/ 한번만 사용 )해야 됨
+  - html 요소에 여러 개의 id 이름을 복합적으로 사용 불가능
+    (프로그램 언어의 변수에게 영향을 줄 수 있어 오류가 될 수있기때문)
+
+- class (css명은 class로만 사용하는 것을 권장)
+  - 같은(한) html페이지에서 여러번 반복 사용 가능함
+  - html 요소에 여러 개의 class 이름을 복합적으로 사용 가능
+
+```
+/* id와 class의 사용 차이*/
+<p class="paragraph">단락1</p>
+<p class="paragraph">단락2</p> (O)
+<p id="content">단락3</p>
+<p id="content">단락4</p> (X 잘못됨)
+
+/* 클래스명 예시 / 연결할때 _보다 -를 권장. 이유는 빌드툴 사용에서 인식이 안됨 */
+<p class="gnb-list-item">회사소개</a>
+```
+
+### CSS 선택자 우선순위
+
+- cascading 규칙
+  - 동일한 대상에 여러 스타일이 전용될 때 제일 마지막에 적용된 스타일이 반영
+  
+- 선택자 우선순위
+  - 선택자 종류에 따라 CSS 적용 우선순위가 다르제 정의
+  - casdaing 규칙에 따르지 않고 css를 적용할 때 사용
+  - inline : 1000
+  - id : 100
+  - class : 10
+  - tag : 1
