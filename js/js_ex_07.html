@@ -9,41 +9,41 @@
 <body>
   <h1>변수 스코프</h1>
   <script>
-      // gbobal scope
-      let a = 1;
-      var _a = 1;
-      
-      function myFuntion(){
-        //function scope
-        let b = 2;
-        var _b = 2;
-      
-        for(let i=0;i<1;i++){
-          //Block scope(1)
-          let c = 3;
-          var _c = 3;
-        }
-      }
-      
-      myFuntion();
+    // Global Scope
+    let a = 1;
+    var _a = 1;
 
-      if(true){
-          //Block scope(2)
-          let d = 4;
-          var _d = 4;
+    function myFunction(){
+      // function scope
+      let b = 2;
+      var _b = 2;
 
-          //console.log(a);
-          //console.log(b);
-          //console.log(c);
-          console.log(d);
-          console.log(_a);
-          console.log(_b);
-          console.log(_c);
-          console.log(_d);
+      for(let i=0;i<1;i++){
+        // block scope(1)
+        let c = 3;
+        var _c = 3;
       }
-      
-      // gbobal scope
-      </script>
+    }
+
+    myFunction();
+
+    if(true){
+      // block scope(2)
+      let d = 4;
+      var _d = 4;
+
+      console.log(a);
+      // console.log(b);
+      // console.log(c);
+      console.log(d);
+      console.log(_a);
+      // console.log(_b);
+      // console.log(_c);
+      console.log(_d);
+    }
   
+    // Global Scope
+    
+  </script>
 </body>
 </html>

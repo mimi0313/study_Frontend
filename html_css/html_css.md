@@ -302,10 +302,112 @@ a{
 - cascading 규칙
   - 동일한 대상에 여러 스타일이 전용될 때 제일 마지막에 적용된 스타일이 반영
   
-- 선택자 우선순위
-  - 선택자 종류에 따라 CSS 적용 우선순위가 다르제 정의
-  - casdaing 규칙에 따르지 않고 css를 적용할 때 사용
+- 선택자 우선순위 
+  - 선택자 종류에 따라 css 적용 우선순위가 다르게 정의
+  - cascading 규칙에 따르지 않고 CSS를 적용할 때 사용
   - inline : 1000
   - id : 100
   - class : 10
   - tag : 1
+
+### 상속의 규칙
+- 조상요소나 부모요소의 내용이 자식요소에게 상속 적용됨
+  - HTML Element 중에 상속되지 않는 태그가 있음
+  - CSS 속성중에 상속되지 않는 속성이 있음
+
+
+### Text Styling
+
+#### Color
+```
+h1{
+  color:blue;
+}
+```
+
+#### Text aligment
+- 정렬 값 : left, center, right, justify(안쪽맞춤)
+```
+p{
+  text-align:center;
+}
+```
+
+- 단어 중간에 줄 바꿈
+```
+p{
+  word-break:break-all;
+}
+```
+
+#### Text-decoration
+- 글에 라인 넣어주기.
+```
+h1 {
+  text-decoration: underline;
+}
+h1 {
+  text-decoration: line-through;
+}
+h1 {
+  text-decoration: overline;
+}
+
+a {
+  text-decoration:none;
+}
+```
+
+#### Text Transformation
+```
+
+```
+#### line-height
+- 텍스트 높이를 포함하여 텍스트 위 아래 여백 전체높이
+- 값 : 
+  - px
+  - 배수 : 폰트 크기를 기준으로 몇 배, 소수점을 포함한 숫자 가능
+    (브라우져 확대/축소 시킬때 폰트 크기와 연결되어 같이 변화하기 때문에 사용성이 좋아져 배수 사용을 많이 사용하는 편)
+
+
+
+#### text-indent
+- 단락 처음 들여쓰기
+```
+p{
+  text-indent:16px;
+}
+```
+
+#### letter-spacing
+- 자간 조절
+```
+p{
+  letter-spacing:5px;
+}
+```
+
+#### word-spacing
+- 단어 간격
+```
+p{
+  word-spacing:10px;
+}
+```
+
+#### white-space
+- 줄바꿈. 
+  기본적으로 가로 사이즈보다 내용이 길면 밑으로 줄바꿈 하면서 내용을 보여주지만, 줄바꿈을 하고싶지 않을때 사용 해줌
+```
+p {
+  white-space: nowrap;
+}
+```
+
+#### Font Family
+- CSS 파일이 브라우저에서 렌더링되기 때문에 폰트 파일을 클라이언트 PC에서 찾음.
+  - 다수의 클라이언트 PC에 설치될 만한 폰트를 선택(Web safe)
+- font-family 속성에 값으로 정해준 폰트 공유를 차례대로 찾음(fallback)
+
+- 서버에서 폰트를 사용할 수 있게 하는 기술
+  - Web font
