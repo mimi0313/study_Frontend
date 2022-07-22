@@ -407,7 +407,28 @@ p {
 #### Font Family
 - CSS 파일이 브라우저에서 렌더링되기 때문에 폰트 파일을 클라이언트 PC에서 찾음.
   - 다수의 클라이언트 PC에 설치될 만한 폰트를 선택(Web safe)
-- font-family 속성에 값으로 정해준 폰트 공유를 차례대로 찾음(fallback)
+- font-family 속성에 값으로 정해준 폰트 종류를 차례대로 찾음(Fallback)
 
-- 서버에서 폰트를 사용할 수 있게 하는 기술
+- 서버에서 폰트를 사용할 수 있게 하는 기능
   - Web font
+- 구글 폰트(저작권에 위배되지않는 폰트 검색 가능)
+- 폰트 종류(저작권)
+  - 폰트 파일 포함 여부 (웹경로의 폰트라면 html에 폰트파일 url 넣어주기)
+
+- Font size
+  - font-size
+  - 폰트 크기
+  - px
+
+- Font Style
+  - font-style
+  - 기울임꼴 설정
+  - italic 값
+
+- Font weight
+  - font-weight
+  - 굵기
+  - normal/bold
+  - 단위없는 100단위 숫자 값 사용
+
+  

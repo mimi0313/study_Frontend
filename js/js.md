@@ -319,6 +319,13 @@ document.getElementById('id') : id로 DOM 접근
 document.getElementsByClassName('class') : class로 DOM 접근
 document.getElementsByTagName('tagname') : tag로 DOM 접근
 
+
+jQuery
+$('#id')
+$('.class')
+$('tag')
+
+
 html5
 document.querySelector('#id')
 document.querySelector('.class')
@@ -327,6 +334,35 @@ document.querySelector('tag')
 document.querySelectorAll('.class')
 document.querySelectorAll('tag')
 ```
+
+### 이벤트
+- 상태(상황)의 변화
+- ~할 때 : 이벤트 발생
+```
+마우스를 클릭 할때, 키보드를 누를 떄
+```
+```
+이벤트 흐름
+
+이벤트 발생 -> 신호 발생 -> 하단 이벤트에 대응하는 기능/동작 실행
+```
+
+- addEventListener(이벤트햄들러함수) : 이벤트 감지
+- 이벤트 핸들러 : 익명함수 사용
+  - 익명함수 : 함수이름이 없는 함수
+
+```
+function(){
+
+}
+```
+
+```
+dom.addEventListener('click',function(){
+  실행 코드 블럭
+});
+```
+
 
 ### HTML / CSS / JS 종합 활용
 ### Open API : 객체
