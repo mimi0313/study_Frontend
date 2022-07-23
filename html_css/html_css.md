@@ -404,7 +404,7 @@ p {
 }
 ```
 
-#### Font Family
+#### Font
 - CSS 파일이 브라우저에서 렌더링되기 때문에 폰트 파일을 클라이언트 PC에서 찾음.
   - 다수의 클라이언트 PC에 설치될 만한 폰트를 선택(Web safe)
 - font-family 속성에 값으로 정해준 폰트 종류를 차례대로 찾음(Fallback)
@@ -431,4 +431,120 @@ p {
   - normal/bold
   - 단위없는 100단위 숫자 값 사용
 
-  
+#### Link style
+- a 태그가 4가지 상태를 구분함
+- link, visited, hover, active
+```
+<a href="https://www.naver.com" class="link">naver</a>
+
+a:link{}
+.link:visited{}
+a:hover{}
+a:active{}
+```
+
+
+### Layout styling
+
+- Element 영역
+  - Block, Inline, Element
+- Element 영역 styling
+  - Box model
+- Element 배치
+  - 배치 지정
+    - 인접해있는 박스들의 관계
+    - 인접해있는 박스들 사이에 영향
+  - 위치 지정
+    - 박스의 위치를 단독으로 지정
+
+#### Box Model
+- Box Model 구성요소
+  - content (width/height), padding, border, margin
+
+- inline 요소에 box model 적용
+
+
+##### width/height
+  - block 요소
+    - width는 부모요소 기준으로 100% 채워짐
+    - height는 contents 또는 자식요소에 맞춰짐
+  - px
+  - %
+    - width는 부모 요소의 기준으로 설정한 비율 크기만큼 사이즈 계산됨
+    - height는 적용이 되지 않음
+  - auto
+    - width/height 자동으로 크기 지정
+    - width/height의 원래 특성으로 적용되어 굳이 사용하지 않음
+
+##### padding
+
+- 블럭의 안쪽 여백
+```
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+(** 방향순서 - top을 기준으로 시계방향 순서)
+padding:10px 25px 10px 25px; - 4방향 각각 사용
+
+padding:10px 25px 10px; - - 2번째 값 좌/우 공통
+
+padding:10px 25px; - 1번쨰 위/아래 2번쨰 좌/우 공통
+
+padding:10px; - 4방향 공통
+```
+
+##### margin
+
+- 블럭의 바깥쪽 여백
+- maring collapse(겹침/상쇄)
+  - 위 아래의 인접한 박스의 margin이 상쇄(제거)되는 현상 있음
+    (두 여백 크기 중 큰 사이즈만 적용됨)
+  - 좌우로 인접한 박스는 margin이 모두 적용됨 (좌우값이 더해짐)
+
+##### border
+- 굵기, 모양, 색
+```
+border:1px sold red;
+
+border-top
+border-right
+border-bottom - 1px sold red; 특정 방향에만 적용시키고 싶을경우 방향을 입력해줌
+border-left
+```
+
+##### background
+- 배경은 Box model 요소의 content, padding 영역까지 적용
+- 배경색
+- 배경 이미지
+  (이미지를 사용할 경우, 아래 배경이미지 설정을 추가로 사용 가능)
+  - background-repeat
+    - norepeat(반복 안한다) / x-repeat(가로만 반복) / y-repeat(세로만 반복)
+  - background-position
+    - px
+    - left, center, right
+    - top, center, bottom
+    - 배경이미지의 위치 지정은 이미지를 반복하지 않을때 사용
+  - background-attachment
+    - fixed 사용하여 위치를 고정 /  
+      (배경이 고정되면서 스크롤이 긴 컨텐츠의 경우 배경 위의 떠있는거 같은 느낌.)
+- 축약하여 사용 가능
+```
+background-color-red;
+
+background-image:url(이미지파일); 
+background-repeat:norepeat
+background-position:10px 20px -
+background-attachment:fixed;
+
+background: #ffffff url("img_tree.png") no-repeat right top;
+```
+
+#### display
+- 박스의 표시 송석을 변경해서 표시
+```
+display:inline; /* */
+display:block;
+display:inline-block;
+```

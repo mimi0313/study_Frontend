@@ -5,19 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>데이터 입출력</title>
+  <style>
+    .list{
+      list-style:none;
+    }
+  </style>
 </head>
 <body>
   <h1>데이터 입출력</h1>
 
   <ul class="list">
-    <li class="list-item">HTML</li>
-    <li class="list-item">CSS</li>
+    <li class="list-item">
+      <span class="item-number">1</span>
+      <span class="item-text">HTML</span>
+    </li>
+    <li class="list-item">
+      <span class="item-number">2</span>
+      <span class="item-text">CSS</span>
+    </li>
   </ul>
 
-  <button type="button" class="create">Create</button>
-  <button type="button" class="read">Read</button>
-  <button type="button" class="update">Update</button>
-  <button type="button" class="delete">Delete</button>
+  <div>
+    <input type="text" class="input-create" value="">
+    <button type="button" class="create">Create</button>
+  </div>
+  <div>
+    <input type="text" class="input-read" value="">
+    <button type="button" class="read">Read</button>
+  </div>
+  <div>
+    <input type="text" class="input-unmber" value="">
+    <input type="text" class="input-update" value="">
+    <button type="button" class="update">Update</button>
+  </div>
+  <div>
+    <input type="text" class="input-delete" value="">
+    <button type="button" class="delete">Delete</button>
+  </div>
   <div class="print"></div>
 <script>
   // Create
@@ -25,18 +49,38 @@
   createBtn.addEventListener('click', function(){
     // 목록 항목 추가 대상
     let list = document.querySelector('.list');
+
+    // 목록항ahr 요소
+    let listItem = document.querySelectorAll('.list-item');
     
     // 추가할 내용 생성
-    let listItem = document.createElement('li');
+    let newListItem = document.createElement('li');
 
     // 태그에 class 추가
-    listItem.classList.add('list-item');
+    newListItem.classList.add('list-item');
+
+    // input 접근/ 내용 가져오기
+    let inputCreate = document.querySelector('.input-create');
 
     // 태그에 텍스트 내용 추가
-    listItem.innerHTML = 'Javascript';
+    listItem.innerHTML = inputCreate.value;
+
+    // span 태그에 번호 추가
+    let itemNumber = document.createElement('span');
+    itemNumber.classList.add('item-number');
+    itemNumber.innerHTML = listItem.length + 1;
+
+    // span 태그에 내용 추가
+    let itemText = document.createElement('span');
+    itemText.classList.add('item-text');
+    itemText.innerHTML = inputCreate.value;
+
+    newListItem.appendChild(itemNumber);
+    newListItem.appendChild(itemText);
+
 
     //목록에 새로 생성항 항목을 추가
-    list.appendChild(listItem);
+    list.appendChild(newListItem);
   });
 
    // Read
@@ -44,11 +88,16 @@
     readBtn.addEventListener('click', function(){
       let listItem = document.querySelectorAll('.list-item');
       let print = document.querySelector('.print');
+      
+      let inputRead = document.querySelector('.input-read');
 
-      print.innerHTML = '';
+
+      inputRead.value = '';
 
       for(let i=0;i<listItem.length;i++){
-        print.innerHTML += listItem[i].innerHTML + ' ';
+        // print.innerHTML += listItem[i].innerHTML + '';
+
+        inputRead.value += listItem[0].innerHTML + '';
       }
 
     });
@@ -70,7 +119,7 @@
       let list = document.querySelector('.list');
       let listItem = document.querySelectorAll('.list-item');
 
-      list.removeChild(listItem[1]);
+      listitem.removeChild(listItem[1]);
 
     });
   </script>
