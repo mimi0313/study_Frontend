@@ -14,7 +14,7 @@
 <body>
   <h1>데이터 입출력</h1>
 
-  <ul class="list">
+  <ol class="list">
     <li class="list-item">
       <span class="item-number">1</span>
       <span class="item-text">HTML</span>
@@ -23,23 +23,23 @@
       <span class="item-number">2</span>
       <span class="item-text">CSS</span>
     </li>
-  </ul>
+  </ol>
 
   <div>
-    <input type="text" class="input-create" value="">
+    <input type="text" class="input-create">
     <button type="button" class="create">Create</button>
   </div>
   <div>
-    <input type="text" class="input-read" value="">
+    <input type="text" class="input-read">
     <button type="button" class="read">Read</button>
   </div>
   <div>
-    <input type="text" class="input-unmber" value="">
-    <input type="text" class="input-update" value="">
+    <input type="text" class="input-number">
+    <input type="text" class="input-update">
     <button type="button" class="update">Update</button>
   </div>
   <div>
-    <input type="text" class="input-delete" value="">
+    <input type="text" class="input-delete">
     <button type="button" class="delete">Delete</button>
   </div>
   <div class="print"></div>
@@ -62,8 +62,6 @@
     // input 접근/ 내용 가져오기
     let inputCreate = document.querySelector('.input-create');
 
-    // 태그에 텍스트 내용 추가
-    listItem.innerHTML = inputCreate.value;
 
     // span 태그에 번호 추가
     let itemNumber = document.createElement('span');
@@ -97,29 +95,35 @@
       for(let i=0;i<listItem.length;i++){
         // print.innerHTML += listItem[i].innerHTML + '';
 
-        inputRead.value += listItem[0].innerHTML + '';
+        inputRead.value += listItem[i].querySelector('.item-text').innerHTML + ' ';
       }
 
     });
 
-    // update
-    let updateBtn = document.querySelector('.update');
+   // update
+        let updateBtn = document.querySelector('.update');
     updateBtn.addEventListener('click', function(){
 
+      let updateNumber = document.querySelector('.input-number').value;
+      let updateText = document.querySelector('.input-update').value;
       let listItem = document.querySelectorAll('.list-item');
 
-      listItem[0].innerHTML = 'HTML5';
+      listItem[updateNumber-1].querySelector('.item-text').innerHTML = updateText;
 
     });
 
-    // Delete
-    let deleteBtn = document.querySelector('.delete');
+     // Delete
+     let deleteBtn = document.querySelector('.delete');
     deleteBtn.addEventListener('click', function(){
 
       let list = document.querySelector('.list');
       let listItem = document.querySelectorAll('.list-item');
+      let deleteNumber = document.querySelector('.input-delete').value;
 
-      listitem.removeChild(listItem[1]);
+      list.removeChild(listItem[deleteNumber-1]);
+      /*
+        listItem[1].remove(); // 사용 가능
+      */
 
     });
   </script>

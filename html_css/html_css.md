@@ -544,7 +544,103 @@ background: #ffffff url("img_tree.png") no-repeat right top;
 #### display
 - 박스의 표시 송석을 변경해서 표시
 ```
-display:inline; /* */
-display:block;
-display:inline-block;
+display:inline; /* block 요소가 inline요소의 특성으로 화면에 표시 */
+display:block; /* inline 요소가 block요소의 특성으로 화면에 표시 */
+display:inline-block; /* inline과 block의 특성을 모두 표시 : 나란히 표시, 박스모델 */
 ```
+
+### layout 배치
+- float
+- flex
+- grid
+
+#### flexbox
+- Html Element가 포함 관계고 구성
+- 부모요소에 flex 설정, 배치관련 속성들을 적용
+
+```
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+.flex-container{
+  display:flex;
+  flex-direction :column /* 위에서 아래로 */
+  flex-wrap:wrap /* 플렉스 항목이 래핑되도록 지정 */
+}
+```
+
+#### position
+- 박스 위치를 단독 지정
+- top, right, bottom, left 위치 지정 속성과 같이 사용
+
+- relative
+  - 박스의 원래 위치에서 좌표 크기만큼 이동
+  - 요소의 일반적인 흐름에서 제외되지 않음
+    (레이어로 치면, 동일한 레벨에 위치)
+
+- absolute
+  - 위치 지정을하고자 하는 곳의 조상요소에 position:relative 속성을   
+    적용시켜 기준으로 지정해주어야 함
+  - 요소의 일반 흐름에서 제외됨 (레이어를 겹쳐 쌓는 개념)
+  - 문서에서 제외되지 않음
+  - z-index 
+    - 블럭이 겹칠때(유리판이 쌓인다고 생각) 보여지는 앞뒤 순서
+    - 같은 단위없는 정수(양수/음수 모두) 사용
+    - z-index를 사용할떄는 position:absolute 적용 되어있어야 함
+    - 숫자가 클수록 레벨이 높아 제일 앞쪽에 노출되어 가려지는 것이 없음.
+
+- fixed
+  - browser를 기준으로 위치 지정
+  - 요소의 일반 흐름에서 제외됨
+  - 문서에서 제외됨
+
+
+
+## 반응형 웹
+- 다양한 디바인스의 환면에 컨텐츠, 레이아웃이 잘 보이도록 스타일 구현
+- OSMU(One Source Multi Use)
+  - 하나의 HTML Source, 여러개의 CSS Source
+
+### 뷰포트
+- 모바일 디바이스 화면에 웹 페이지 컨텐츠나 레이아웃이 잘 보일 수 있도록 하는 기능
+- 뷰포트가 없을 때는 PC에 최적화된 레이아웃이 모바일 디바이스 화면에 보이게 됨
+
+### 미디어 쿼리
+- 특정 조건(상황)에 맞는지 비교 체크
+- 조건에 맞으면 포함되어 있는 CSS코드 블럭을 실행
+
+```
+@midia screen and (max-width:600px;){}
+  - max-width:600 -> 600px보다 작으면 코드블럭 실행
+@midia screen and (min-width:600px;){}
+  - min-width:600 -> 600px보다 크면 코드블럭 실행
+```
+
+#### 디바이스 스크린의 해상도
+  디바이스 스크린의 해상도는 가로 해상도를 기준
+
+- PC Monitor
+  - 1920px * 1080px : Full HD (1K)
+  - 3040px * 2160px : 4K
+  - 1280 * 720(1024) ★ - 노트북때문에 작은 해상도 기준으로 한다.
+  - 1024 * 768
+
+- Tablet (가로비율과 세로비율이 크지않아서 세로모드로 고려함)
+  - 1920 * 1080
+  - 1280 * 720 ★ - PC랑 동일하게 화면을 돌리기도해서 세로기준도 따져준다.
+  - 1024 * 768
+
+- Phone
+  - 400 * 800
+  - 320 * 640 ★ - 작은 해상도를 기준으로 함.
+  - pc 픽셀크기와 모바일 픽셀크기가 달라서 해상도가 달라짐
+    pc보다 모바일의 픽셀크기가 작아서 동일한 이미지의 경우 모바일에서 더 작게보임. (pixel ratio 만큼 작음)
+    https://www.mydevice.io/#compare-devices
+
+- Breakpoint
+  - 화면 크기에 따라 CSS가 다르게 적용되는 행상도 지점
+  - 위 해상도 사례에서 1024, 720, 320 해상도가 breakpoint로 선택될 수 있음
+ 
