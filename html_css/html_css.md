@@ -462,7 +462,34 @@ a:active{}
   - content (width/height), padding, border, margin
 
 - inline 요소에 box model 적용
+  - width/height : 적용 안됨
+  - margin: 위/아래 적용 안됨, 좌우 적용됨
 
+- 박스 크기 계산
+  - 박스 모델 구성요소(width/height + padding + border)의 크기 합 => 박스의 전체 크기
+    ex) width:300, padding:20px, border:1px, margin:10px 
+        = 실제 크기는 300 + 40 + 2 = 342px
+    ex) width:500, padding:20px 20px 20px 0, border:2px, margin:10px 
+        = 실제 크기는 500 + 20 + 4 = 524px
+
+- box-sizing 속성
+  - width의 기준을 content 또는 전체크기 중에 선택 가능
+```
+  div{
+    width:300px;
+    padding:20px;
+    border:1px solid #000;
+    box-sizing:contnet-box; /* default */
+  } 크기 => 300 + 40 + 2 = 342 => content 합이 영역 크기
+
+  div{
+    width:300px;
+    padding:20px;
+    border:1px solid #000;
+    box-sizing:border-box; /* 박스 크기를 width값이 되도록 기준 */
+  } 크기 => x + 40 + 2 = 300 = 박스의 크기가 300이 되도록 width값이 x가 됨
+
+```
 
 ##### width/height
   - block 요소
@@ -644,3 +671,42 @@ display:inline-block; /* inline과 block의 특성을 모두 표시 : 나란히 
   - 화면 크기에 따라 CSS가 다르게 적용되는 행상도 지점
   - 위 해상도 사례에서 1024, 720, 320 해상도가 breakpoint로 선택될 수 있음
  
+ ## color 값
+ - red, blue, black 색상이름
+ - #efefef 16진수 값
+ - rgb(0~255, 0~255, 0~255) : 10진수 값
+ ```
+컴퓨터에서 사용하는 진수:2진수
+2진수 데이터 : 01101110
+
+bit : 2진수 1자리 저장(표현)공간 / 컴퓨터 데이터의 최소 단위
+8bit = 1byte : 정보 표현의 최소단위 / 표현가능 개수 : 2^8 = 256
+
+RGB : Red, Green, Blue - 화면(screen) / 가산 혼합
+CMYK : Cyan, Magenta, Yellow, Black - 인쇄 / 감산 혼합
+
+Red(1byte), Green(1byte), Blue(1byte) => 24bit 트루컬러(2^24)
+
+16진수(0~9, a,b,c,d,e,f)
+2진수 4bit => 16진수 1bit
+24자리 2진수 => 6자리 16진수
+Ex) #1a3cff, #555555 => #555, #55ffdd => #5fd
+
+cf) #ffffff : white / #000000 : black / #555555, #f9f9f9 : grey
+
+10진수
+함수 사용 : rgb(red, green, blue)
+10진수 범위 : 0~255
+
+Ex) rgb(100, 230, 58)
+ ```
+
+## image format
+비트맵
+
+확대하면 깨짐
+jpg(색표현), gif(투명배경, 애니메이션), png(투명배경)
+벡터
+
+확대해고 안깨짐
+svg
