@@ -710,3 +710,23 @@ jpg(색표현), gif(투명배경, 애니메이션), png(투명배경)
 
 확대해고 안깨짐
 svg
+
+## 투명도
+
+- transparent : 값으로 사용하기 때문에 색만 투명하게 적용
+- alpha : 값으로 사용하기 때문에 색만 투명하게 적용
+- opacity : 속성이기 떄문에 html Element 자체를 투명하게 적용
+
+```
+div{
+  background:transparent;
+}
+
+div{
+  color:rgba(100, 59, 240, 0.5) /* 투명도는 0.0 ~ 1.0(100%) */
+}
+
+div{
+  opacity:0.5 /* 0.0 ~ 1.0(100%) */
+}
+```
